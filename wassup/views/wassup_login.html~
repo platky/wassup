@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/wassup.css" />
+    <link rel="stylesheet" href="/static/css/ext/bootstrap.css"/>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" id="title" href="#">WASSUP!</a>
+                <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="navbar-small" data-toggle="dropdown" aria-expanded="true">
+                    <img src="/static/menu.png"></img>
+                </button>
+                <ul class="dropdown-menu pull-right pull-down" role="menu" aria-labelledby="navbar-small" id="drop">
+                    <li id="private1" class="active" role="presentation"><a role="menuitem" href="#">Private Server</a></li>
+                    <li id="public1" role="presentation"><a role="menuitem" href="#">Public Server</a></li>
+                </ul>
+                </div>
+            </div>
+            <div id="navbar-big" class="collapse navbar-collapse">
+                <p id="server" class="navbar-text">Server:</p>
+                <ul class="nav navbar-nav navbar-left">
+                    <li id="private2" class="active"><a href="#">Private</a></li>
+                    <li id="public2"><a href="#">Public</a></li>
+                </ul>
+            </div>
+            
+        </div>
+  </nav>
+  </head>
+  <body>
+
+    %if error_message:
+    <p>
+      <em>{{error_message}}</em>
+    </p>
+    %end
+
+    <form method="POST" id="" action="/logged_in" enctype="multipart/form-data">
+                <div id="login_username" class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">User Name</span>
+                    <input id="curUser" name="user_id" type="text" class="form-control" placeholder="...">
+                </div>
+                <div id="login_fullname" class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Full Name&nbsp&nbsp</span>
+                    <input id="curName" name="full_name" type="text" class="form-control" placeholder="...">
+                </div>
+                <div id="loginDiv">
+                    <input id="loginBut" type="submit" class="btn btn-default" value="Log In" />
+                </div>
+
+    </form>
+    <script>
+        window.addEventListener('load', function() {
+            document.cookie="server=private";
+            var loginBut = document.getElementById('loginBut');
+            loginBut.addEventListener('click', function() {
+                var user = document.getElementById("curUser");
+                var name= document.getElementById("curName");
+                if (user != "") {
+                    document.cookie = "username="+user.value;
+                    document.cookie = "fullname="+name.value;
+                }
+            });
+    
+            var private1 = document.getElementById('private1');
+            var private2 = document.getElementById('private2');
+            var public1 = document.getElementById('public1');
+            var public2 = document.getElementById('public2');
+            
+            private1.addEventListener('click', function() {
+                private1.className="active";
+                private2.className="active";
+                public1.className="";
+                public2.className="";
+                document.cookie="server=private";
+            });
+            
+            private2.addEventListener('click', function() {
+                private1.className="active";
+                private2.className="active";
+                public1.className="";
+                public2.className="";
+                document.cookie="server=private";
+            });
+            
+            public1.addEventListener('click', function() {
+                private1.className="";
+                private2.className="";
+                public1.className="active";
+                public2.className="active";
+                document.cookie="server=public";
+            });
+        });
+    </script>
+    <script src="static/js/ext/underscore.js"></script>
+    <!--<script type="text/javascript" src="/static/js/wassup.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,141 @@
+.logo {
+    width: 150px;
+}
+
+#login_username {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#login_fullname {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#loginDiv {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+#loginBut {
+    background: #003399;
+    color: white;
+    width: 100%;
+}
+
+#title{
+    font-size: 180%;
+    font-weight: bold;
+}
+
+#server {
+    opacity: 0.75;
+}
+
+#navbar-big {
+    display: block;
+}
+
+#navbar-small {
+    float:right;
+    margin-right: 8px;
+    margin-top: 5px;
+    display: none;
+}
+
+#drop {
+    margin-top:40px;
+}
+
+#messages {
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 2px solid;
+    border-radius: 12px;
+}
+
+#useradd {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 45%;
+    float:left;
+}
+
+#usersend {
+    margin-top: 20px;
+    margin-right:10px;
+    width:45%;
+    float: right;
+}
+
+#mainCanvas {
+    border: 1px solid;
+    margin-left: 12.5%;
+    margin-top: 30px;
+    
+}
+
+#buttons {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#back {
+    display: inline-block;
+    margin-left: 15%;
+}
+
+#forward {
+float:right;
+    margin-right: 15%;
+}
+
+#delete {
+    position: relative;
+    top:-32px;
+    left: calc(50% - 16px); /*very useful, make sure it works cross-browser! */
+}
+
+#logout1 {
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 450px){
+    #navbar-big {
+        display:none;
+    }
+    
+    #navbar-small {
+        display:inline-block;
+    }
+    
+    #useradd {
+        margin-left: 10px;
+        margin-right: auto;
+        width: 90%;
+    }
+    
+    #usersend {
+        float:left;
+        margin-left: 10px;
+        margin-right: auto;
+        width:90%;
+}
+}
+
+@media screen and (max-width: 500px){
+    #server {
+        display:none;
+    }
+}
+
+
+

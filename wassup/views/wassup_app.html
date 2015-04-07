@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/wassup.css" />
+    <link rel="stylesheet" href="/static/css/ext/bootstrap.css"/>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" id="title" href="#">WASSUP!</a>
+                <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="navbar-small" data-toggle="dropdown" aria-expanded="true">
+                    <img src="/static/menu.png"></img>
+                </button>
+                <ul class="dropdown-menu pull-right pull-down" role="menu" aria-labelledby="navbar-small" id="drop">
+                    <li id="private1" role="presentation"><a role="menuitem" href="#">Private Server</a></li>
+                    <li id="public1" role="presentation"><a role="menuitem" href="#">Public Server</a></li>
+                    <form method="POST" id="" action="/logout" enctype="multipart/form-data">
+                    <li role="presentation" id="logout1"><a role="menuitem" href="#">Logout</a></li></form>
+                </ul>
+                </div>
+            </div>
+            <div id="navbar-big" class="collapse navbar-collapse">
+                <p id="server" class="navbar-text">Server:</p>
+                <ul class="nav navbar-nav navbar-left">
+                    <li id="private2"><a href="#">Private</a></li>
+                    <li id="public2"><a href="#">Public</a></li>
+                </ul>
+                <div class="navbar-right">
+                    <form method="POST" id="" action="/logout" enctype="multipart/form-data">
+                    <button type="submit" class="btn btn-default navbar-btn">Logout</button></form>
+                </div>
+            </div>
+            
+        </div>
+  </nav>
+  </head>
+  <body>
+    <div id="messages">
+        You currently have 0 sups
+    </div>
+    <div id="users">
+        <div id="useradd">
+                <div class="input-group">
+                    <input id="addText" type="text" class="form-control" placeholder="Add User...">
+                    <span class="input-group-btn">
+                        <button id="addBut" class="btn btn-default" type="button">Add</button>
+                    </span>
+                </div>
+        </div>
+        <div id="usersend">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button id="removeBut" class="btn btn-default" type="button">X</button>
+                </span>
+                <select class="form-control" id="select">
+                </select>
+                <span class="input-group-btn">
+                    <button id="sendBut" class="btn btn-default" type="button">Send</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="canvas">
+    
+    </div>
+    
+    <div id="buttons">
+        <a href="#" id="back"><img src="/static/circle-left.png"></img></a>
+        <a href="#" id="forward"><img src="/static/circle-right.png"></img></a>
+    </div>
+        <a href="#" id="delete"><img src="/static/bin.png"></img></a>
+
+    <script src="static/js/ext/underscore.js"></script>
+    <script type="text/javascript" src="/static/js/users.js"></script>
+    <script type="text/javascript" src="/static/js/view.js"></script>
+    <script type="text/javascript" src="/static/js/wassup.js"></script>
+    <script type="text/javascript" src="static/js/ext/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="static/js/ext/bootstrap.js"></script>
+  </body>
+</html>
